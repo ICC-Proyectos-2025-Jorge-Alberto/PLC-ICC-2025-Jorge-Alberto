@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>analogicos</title>
+  <title>Bloques Analógicos | Proyectos PLC</title>
   <style>
     * {
       margin: 0;
@@ -12,267 +13,228 @@
       font-family: "Segoe UI", sans-serif;
     }
 
-    body {
-      background-color: #f4f6f8;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    header {
-      background-color: #1e2a38;
-      color: #fff;
-      width: 100%;
-      text-align: center;
-      padding: 1.5rem 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      position: relative;
-    }
+header {
+  background-color: #1e2a38;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
 
-    header h1 {
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-    }
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
 
-    /* Botón de regreso */
-    .back-btn {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      text-decoration: none;
-      background-color: #32465a;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
+/* Botón de regreso */
+.back-btn {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  background-color: #32465a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-    .back-btn:hover {
-      background-color: #4b627a;
-      transform: translateY(-50%) scale(1.05);
-    }
+.back-btn:hover {
+  background-color: #4b627a;
+  transform: translateY(-50%) scale(1.05);
+}
 
-    .intro {
-      max-width: 900px;
-      text-align: center;
-      margin: 2rem 1rem;
-      line-height: 1.6;
-    }
+.intro {
+  max-width: 900px;
+  text-align: center;
+  margin: 2rem 1rem;
+  line-height: 1.6;
+}
 
-    .intro p {
-      font-size: 1rem;
-      color: #444;
-    }
+.intro p {
+  font-size: 1rem;
+  color: #444;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      width: 90%;
-      max-width: 1000px;
-      margin-bottom: 3rem;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1100px;
+  margin-bottom: 3rem;
+}
 
-    .card {
-      background-color: #fff;
-      border-radius: 32px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      padding: 2rem 1rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 2rem 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-    }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
 
-    .card h3 {
-      color: #1e2a38;
-      margin-bottom: 0.5rem;
-    }
+.card h3 {
+  color: #1e2a38;
+  margin-bottom: 0.8rem;
+}
 
-    .card p {
-      color: #555;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
 
-    .btn {
-      text-decoration: none;
-      background-color: #1e2a38;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background 0.2s ease;
-    }
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
 
-    .btn:hover {
-      background-color: #32465a;
-    }
+.img-container img {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
 
-    footer {
-      text-align: center;
-      background: #1e2a38;
-      color: #fff;
-      width: 100%;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      margin-top: auto;
-    }
+.img-container img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  text-align: center;
+  background: #1e2a38;
+  color: #fff;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+```
+
   </style>
 </head>
+
 <body>
   <header>
-    <a href="funciones_esp.html" class="back-btn">← Página anterior</a>
-    <h1>Funciones analogicas</h1>
+    <a href="funciones_esp.html" class="back-btn">← Volver</a>
+    <h1>Bloques Analógicos</h1>
   </header>
 
   <section class="intro">
     <p>
-      Los <strong>bloques especiales</strong> en los PLC son funciones predefinidas que permiten
-      realizar operaciones más avanzadas dentro de un programa. Estos bloques
-      amplían las capacidades lógicas básicas, facilitando tareas como el
-      conteo, temporización, control analógico y otras funciones específicas.
-      <br><br>
-      A continuación, encontrarás las principales categorías de bloques especiales que
-      se emplean en la automatización industrial:
+      Los <strong>bloques analógicos</strong> permiten trabajar con señales continuas dentro del PLC, 
+      procesando valores numéricos que representan magnitudes físicas como temperatura, presión o velocidad. 
+      Estos bloques facilitan el control y ajuste preciso de procesos donde los valores varían de manera gradual.
     </p>
   </section>
 
   <section class="grid">
     <div class="card">
-      <h3>Instrucción aritmetica</h3>
-      <p>
-        La función "Instrucción aritmética" combina las cuatro operaciones y los tres operadores para formar una ecuación. El operador puede ser uno de los cuatro operadores estándar: +, -, * o /. La prioridad de los operadores viene determinada por "( )" y "[ ]", teniendo "( )" mayor prioridad. Los valores de operandos pueden hacer referencia a una función definida previamente para proporcionar el valor. La función "Instrucción aritmética" redondea el resultado al valor entero más próximo.
-        La cantidad de valores de operandos se ha fijado a 4, en tanto que la cantidad de operadores se ha fijado a 3. Si necesita menos operandos, utilice construcciones tales como " + 0" o " * 1" para especificar los demás parámetros.
-        También puede configurar la reacción de la función cuando el parámetro de habilitación En = 0. El bloque de función puede conservar su último valor, o bien ponerse a 0. Si el parámetro Qen → 0 = 0, la función pone AQ a 0 cuando En=0. Si el parámetro Qen → 0 = 1, la función deja AQ a su último valor cuando En=0.
+      <h3>Instrucción Aritmética</h3>
+      <p>Combina operaciones matemáticas (+, −, ×, ÷) y paréntesis para formar ecuaciones entre señales analógicas, con redondeo automático al entero más cercano.</p>
+      <div class="img-container">
+        <img src="img/arithmetic_block.png" alt="Bloque aritmético">
+        <img src="img/arithmetic_function.png" alt="Funcionamiento aritmético">
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Comparador aritmetico</h3>
-      <p>
-        La función lee los valores analógicos de las entradas Ax y Ay.
-        Ax y Ay se multiplican cada uno por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma entonces al producto relevante, es decir,
-        (Ax • Gain) + Offset = valor real Ax o
-        (Ay • Gain) + Offset = valor real Ay.
-        La función crea la diferencia ("Δ") de los valores reales Ax - Ay.
-        La salida Q se activa o desactiva en función de la diferencia de los valores reales Ax - Ay y de los valores umbral ajustados. Consulte la siguiente regla de cálculo.
-    </div>
+```
+<div class="card">
+  <h3>Comparador Aritmético</h3>
+  <p>Compara dos señales analógicas aplicando factores de ganancia (A) y desplazamiento (B), activando la salida según la diferencia y umbrales definidos.</p>
+  <div class="img-container">
+    <img src="img/comparator_block.png" alt="Bloque comparador">
+    <img src="img/comparator_function.png" alt="Funcionamiento del comparador">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Connmutador analogico de valor umbral</h3>
-      <p>
-      La función lee la señal analógica en la entrada Ax.
-        Ax se multiplica por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma al producto, es decir, (Ax • Gain) + Offset = valor real de Ax.
-        La salida Q se activa o desactiva en función del valor umbral ajustado. Consulte la siguiente regla de cálculo.
-    </div>
+<div class="card">
+  <h3>Conmutador Analógico de Valor Umbral</h3>
+  <p>Activa o desactiva la salida Q según si la señal de entrada supera un valor de umbral configurado.</p>
+  <div class="img-container">
+    <img src="img/threshold_block.png" alt="Bloque conmutador de umbral">
+    <img src="img/threshold_function.png" alt="Funcionamiento del conmutador de umbral">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Amplificador analogico</h3>
-      <p>
-        La función lee la señal analógica en la entrada Ax.
-        Este valor se multiplica por el parámetro A (Gain). El parámetro B (Offset) se suma entonces al producto: (Ax • Gain) + Offset = valor real Ax.
-        El valor real Ax se devuelve en la salida AQ.
-    </div>
-    
-    <div class="card">
-      <h3>Vigilancia del valor analógico</h3>
-      <p>
-        Si el estado de la entrada En cambia de 0 a 1, se guarda el valor de la señal en la entrada analógica Ax. Este valor real guardado se denomina "Aen".
-        Los valores reales analógicos Ax y Aen se multiplican por el valor del parámetro A (Gain). El parámetro B (Offset) se suma entonces al producto:
-        (Ax • Gain) + Offset = valor real Aen, si la entrada En cambia de 0 a 1, o
-        (Ax • Gain) + Offset = valor real Ax.
-        La salida Q se activa si la entrada En = 1 y el valor real en la entrada Ax se encuentra fuera del rango Aen - Δ 2 a Aen + Δ 1.
-        La salida Q se desactiva si el valor real en la entrada Ax se encuentra dentro del rango Aen - Δ 2 a Aen+ Δ 1, o bien si la entrada En cambia a "lo".
-    </div>
+<div class="card">
+  <h3>Amplificador Analógico</h3>
+  <p>Multiplica la entrada por una ganancia (A) y suma un desplazamiento (B), amplificando o ajustando la señal analógica de salida.</p>
+  <div class="img-container">
+    <img src="img/amplifier_block.png" alt="Bloque amplificador">
+    <img src="img/amplifier_function.png" alt="Funcionamiento amplificador">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Conmutador analógico de valor umbral diferencial</h3>
-      <p>
-        La función lee la señal analógica en la entrada Ax.
-        Ax se multiplica por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma al producto, es decir, (Ax • Gain) + Offset = valor real de Ax.
-        La salida Q se activa o reinicia en función del valor umbral ajustado (On) y del valor diferencial (Δ). La función calcula el parámetro Off automáticamente: Off = On + Δ, pudiendo ser Δ un valor positivo o negativo. Consulte la siguiente regla de cálculo.
-    </div>
+<div class="card">
+  <h3>Vigilancia del Valor Analógico</h3>
+  <p>Supervisa si una señal analógica se mantiene dentro de un rango respecto a un valor guardado; activa una salida si se desvía fuera del rango permitido.</p>
+  <div class="img-container">
+    <img src="img/monitor_block.png" alt="Bloque vigilancia analógica">
+    <img src="img/monitor_function.png" alt="Funcionamiento vigilancia">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>MUX analógico</h3>
-      <p>
-        Si se activa la entrada En, la función emite en la salida AQ uno de los cuatro posibles valores analógicos V1 a V4 en función del valor de S1 y S2.
-        Si la entrada En no se activa, la función emite el valor analógico 0 en la salida AQ.
-    </div>
+<div class="card">
+  <h3>Conmutador Analógico Diferencial</h3>
+  <p>Activa o reinicia la salida en función de un umbral y un valor diferencial (Δ), calculando el punto de desconexión automáticamente.</p>
+  <div class="img-container">
+    <img src="img/diff_switch_block.png" alt="Bloque diferencial">
+    <img src="img/diff_switch_function.png" alt="Funcionamiento diferencial">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Rampa analógica</h3>
-      <p>
-        Si se activa la entrada En, la función ajusta el nivel actual a StSp + offset "B" durante 100 ms.
-        Seguidamente, partiendo del nivel StSp + offset "B" y dependiendo de la conexión de Sel, la función efectúa un desplazamiento al nivel 1 o 2 con la aceleración indicada en Rate.
-        Si se activa la entrada St, la función efectúa un desplazamiento al nivel StSp + offset "B" con la aceleración indicada en Rate. Seguidamente, el nivel StSp + offset "B" se mantiene durante 100 ms. Al cabo de 100 ms, el nivel se ajusta a offset "B". El valor escalado (salida AQ) es 0.
-        Si se activa la entrada St, la función solo puede reiniciarse tras haberse desactivado las entradas St y En.
-        Si se ha modificado la entrada Sel y dependiendo de la conexión de Sel, la función efectúa un desplazamiento desde el nivel actual hasta el nivel de destino a la velocidad indicada.
-        Si se desactiva la entrada En, la función ajusta inmediatamente el nivel actual al offset "B".
-        El nivel actual se actualiza cada 100 ms. Tenga en cuenta la siguiente relación entre la salida AQ y el nivel actual:
-        Salida AQ = (nivel actual - offset "B") / ganancia "A".
-    </div>
-    
-    <div class="card">
-      <h3>Regulador PI</h3>
-      <p>
-        Si la entrada A/M se pone a 0, la función especial emite en la salida AQ el valor que haya ajustado en el parámetro Mq.
-        Si la entrada A/M se pone a 1, se inicia el modo automático. El valor Mq se adopta como suma integral y la función del regulador comienza a realizar los cálculos.
-        En las fórmulas se utiliza el valor real PV para el cálculo:
-        Valor actualizado PV = (PV • ganancia) + offset
-        Si el valor actualizado PV = SP, la función especial no modifica el valor en AQ.
-        Dir = hacia arriba (+) (cifras 1 y 3 del cronograma)
-        - Si el valor actualizado PV es mayor que SP, la función especial reduce el valor en AQ.
-        - Si el valor actualizado PV es menor que SP, la función especial aumenta el valor en AQ.
-        Dir = hacia abajo (-) (cifra 2 del cronograma)
-        - Si el valor actualizado PV es mayor que SP, la función especial aumenta el valor en AQ.
-        - Si el valor actualizado PV es menor que SP, la función especial reduce el valor en AQ.
-        Si se produce un fallo, AQ se sigue incrementando o reduciendo hasta que el valor actualizado PV vuelva a equivaler a SP. La rapidez con la que cambia AQ depende de los parámetros KC y TI.
-        Si el valor de la entrada PV excede el parámetro Max, el valor actualizado PV adopta el valor de Max. Si el valor de PV es inferior al parámetro Min, el valor actualizado PV adopta el valor Min.
-        Si la entrada R se pone a 1, se desactiva la salida AQ. Mientras R está activada, la entrada A/M permanece bloqueada.
-    </div>
+<div class="card">
+  <h3>MUX Analógico</h3>
+  <p>Selecciona entre hasta cuatro valores analógicos (V1–V4) según las entradas de selección S1 y S2, entregando el valor elegido en AQ.</p>
+  <div class="img-container">
+    <img src="img/mux_block.png" alt="Bloque MUX">
+    <img src="img/mux_function.png" alt="Funcionamiento MUX">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>PWM (Modulación por ancho de pulso)o</h3>
-      <p>
-        La función lee el valor de la señal aplicada en la entrada analógica Ax.
-        Este valor se multiplica por el parámetro A (Gain). El parámetro B (Offset) se suma al producto como se indica a continuación:
-        (Ax • Gain) + Offset = valor real Ax
-        El bloque de función calcula la proporción del valor real Ax en el rango. El bloque activa la salida digital Q durante la misma proporción del parámetro T (tiempo periódico). Por lo demás, Q se desactiva durante el tiempo restante.
-    </div>
+<div class="card">
+  <h3>Rampa Analógica</h3>
+  <p>Genera una señal que aumenta o disminuye gradualmente (rampa) entre niveles definidos, controlando la velocidad mediante el parámetro Rate.</p>
+  <div class="img-container">
+    <img src="img/ramp_block.png" alt="Bloque rampa">
+    <img src="img/ramp_function.png" alt="Funcionamiento rampa">
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Filtro analógico</h3>
-      <p>
-        La función lee la señal analógica en la entrada Ax de acuerdo con el número de muestras configurado (Sn) y visualiza el valor medio.
-    </div>
-
-    <div class="card">
-      <h3>Máx/Mín</h3>
-      <p>
-        ERst = 1 y En = 0: la función pone el valor AQ a 0.
-        ERst = 1 y En = 1: la función envía un valor a AQ, dependiendo del ajuste de Mode y S1.
-        ERst = 0 y En = 0: la función mantiene el valor de AQ en el valor actual.
-        ERst = 0 y En = 1: la función envía un valor a AQ, dependiendo del ajuste de Mode y S1.
-        Modo = 0: la función pone a AQ al valor mínimo
-        Modo = 1: la función pone a AQ al valor máximo
-        Modo = 2 y S1 = 0: la función pone a AQ al valor mínimo
-        Modo = 2 y S1 = 1: la función pone a AQ al valor máximo
-        Modo = 3: la función emite el valor actual de la entrada analógica.
-    </div>
-    
-    <div class="card">
-      <h3>Valor medio</h3>
-      <p>
-        La función lee la señal de entrada analógica de acuerdo con el tiempo de muestreo ajustado St y el número de muestras Sn y visualiza el valor medio. Una señal en R pone AQ a 0.
-    </div>
+<div class="card">
+  <h3>Regulador PI</h3>
+  <p>Implementa un control proporcional-integral que ajusta automáticamente la salida para mantener la variable de proceso cerca del valor de referencia.</p>
+  <div class="img-container">
+    <img src="img/pi_block.png" alt="Bloque regulador PI">
+    <img src="img/pi_function.png" alt="Funcionamiento PI">
+  </div>
+</div>
+```
 
   </section>
 
