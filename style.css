@@ -142,7 +142,7 @@ footer {
 
 /* Imagen del PLC (100% adaptable) */
 .plc-img {
-    max-width: 60%;
+    max-width: 40%;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
