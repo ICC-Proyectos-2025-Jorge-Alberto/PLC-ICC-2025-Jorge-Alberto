@@ -126,3 +126,13 @@ footer {
 }
 : 50px;
 }
+.plc-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e9f2ff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+}
