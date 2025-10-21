@@ -78,6 +78,9 @@ header h1 {
 .card {
   background-color: #fff;
   border-radius: 16px;
+  padding: 20px;
+  width: 250px; /* ← Este controla el tamaño horizontal */
+  height: 200px; /* ← Este controla el tamaño vertical */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 2rem 1rem;
