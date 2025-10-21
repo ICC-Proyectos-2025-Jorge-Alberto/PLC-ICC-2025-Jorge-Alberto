@@ -13,7 +13,7 @@
     }
 
     body {
-      background-color: #f6f8fa;
+      background-color: #f4f6f8;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -79,7 +79,7 @@
 
     .card {
       background-color: #fff;
-      border-radius: 16px;
+      border-radius: 32px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       padding: 2rem 1rem;
@@ -149,102 +149,129 @@
     <div class="card">
       <h3>Instrucción aritmetica</h3>
       <p>
-        Controlan acciones dependientes del tiempo, como retrasos o duraciones específicas.
-      </p>
-      <a href="temporizadores.html" class="btn">Explorar</a>
+        La función "Instrucción aritmética" combina las cuatro operaciones y los tres operadores para formar una ecuación. El operador puede ser uno de los cuatro operadores estándar: +, -, * o /. La prioridad de los operadores viene determinada por "( )" y "[ ]", teniendo "( )" mayor prioridad. Los valores de operandos pueden hacer referencia a una función definida previamente para proporcionar el valor. La función "Instrucción aritmética" redondea el resultado al valor entero más próximo.
+        La cantidad de valores de operandos se ha fijado a 4, en tanto que la cantidad de operadores se ha fijado a 3. Si necesita menos operandos, utilice construcciones tales como " + 0" o " * 1" para especificar los demás parámetros.
+        También puede configurar la reacción de la función cuando el parámetro de habilitación En = 0. El bloque de función puede conservar su último valor, o bien ponerse a 0. Si el parámetro Qen → 0 = 0, la función pone AQ a 0 cuando En=0. Si el parámetro Qen → 0 = 1, la función deja AQ a su último valor cuando En=0.
     </div>
 
     <div class="card">
       <h3>Comparador aritmetico</h3>
       <p>
-        Permiten llevar registro de eventos o ciclos repetitivos en un proceso automatizado.
-      </p>
-      <a href="contadores.html" class="btn">Explorar</a>
+        La función lee los valores analógicos de las entradas Ax y Ay.
+        Ax y Ay se multiplican cada uno por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma entonces al producto relevante, es decir,
+        (Ax • Gain) + Offset = valor real Ax o
+        (Ay • Gain) + Offset = valor real Ay.
+        La función crea la diferencia ("Δ") de los valores reales Ax - Ay.
+        La salida Q se activa o desactiva en función de la diferencia de los valores reales Ax - Ay y de los valores umbral ajustados. Consulte la siguiente regla de cálculo.
     </div>
 
     <div class="card">
       <h3>Connmutador analogico de valor umbral</h3>
       <p>
-        Trabajan con señales analógicas, procesando valores continuos para control preciso.
-      </p>
-      <a href="analogicos.html" class="btn">Explorar</a>
+      La función lee la señal analógica en la entrada Ax.
+        Ax se multiplica por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma al producto, es decir, (Ax • Gain) + Offset = valor real de Ax.
+        La salida Q se activa o desactiva en función del valor umbral ajustado. Consulte la siguiente regla de cálculo.
     </div>
 
     <div class="card">
       <h3>Amplificador analogico</h3>
       <p>
-        Incluyen operaciones matemáticas, de comparación, conversión y más funciones auxiliares.
-      </p>
-      <a href="otros.html" class="btn">Explorar</a>
+        La función lee la señal analógica en la entrada Ax.
+        Este valor se multiplica por el parámetro A (Gain). El parámetro B (Offset) se suma entonces al producto: (Ax • Gain) + Offset = valor real Ax.
+        El valor real Ax se devuelve en la salida AQ.
     </div>
+    
     <div class="card">
       <h3>Vigilancia del valor analógico</h3>
       <p>
-        Controlan acciones dependientes del tiempo, como retrasos o duraciones específicas.
-      </p>
-      <a href="temporizadores.html" class="btn">Explorar</a>
+        Si el estado de la entrada En cambia de 0 a 1, se guarda el valor de la señal en la entrada analógica Ax. Este valor real guardado se denomina "Aen".
+        Los valores reales analógicos Ax y Aen se multiplican por el valor del parámetro A (Gain). El parámetro B (Offset) se suma entonces al producto:
+        (Ax • Gain) + Offset = valor real Aen, si la entrada En cambia de 0 a 1, o
+        (Ax • Gain) + Offset = valor real Ax.
+        La salida Q se activa si la entrada En = 1 y el valor real en la entrada Ax se encuentra fuera del rango Aen - Δ 2 a Aen + Δ 1.
+        La salida Q se desactiva si el valor real en la entrada Ax se encuentra dentro del rango Aen - Δ 2 a Aen+ Δ 1, o bien si la entrada En cambia a "lo".
     </div>
 
     <div class="card">
       <h3>Conmutador analógico de valor umbral diferencial</h3>
       <p>
-        Permiten llevar registro de eventos o ciclos repetitivos en un proceso automatizado.
-      </p>
-      <a href="contadores.html" class="btn">Explorar</a>
+        La función lee la señal analógica en la entrada Ax.
+        Ax se multiplica por el valor del parámetro A (Gain). El valor del parámetro B (Offset) se suma al producto, es decir, (Ax • Gain) + Offset = valor real de Ax.
+        La salida Q se activa o reinicia en función del valor umbral ajustado (On) y del valor diferencial (Δ). La función calcula el parámetro Off automáticamente: Off = On + Δ, pudiendo ser Δ un valor positivo o negativo. Consulte la siguiente regla de cálculo.
     </div>
 
     <div class="card">
       <h3>MUX analógico</h3>
       <p>
-        Trabajan con señales analógicas, procesando valores continuos para control preciso.
-      </p>
-      <a href="analogicos.html" class="btn">Explorar</a>
+        Si se activa la entrada En, la función emite en la salida AQ uno de los cuatro posibles valores analógicos V1 a V4 en función del valor de S1 y S2.
+        Si la entrada En no se activa, la función emite el valor analógico 0 en la salida AQ.
     </div>
 
     <div class="card">
       <h3>Rampa analógica</h3>
       <p>
-        Incluyen operaciones matemáticas, de comparación, conversión y más funciones auxiliares.
-      </p>
-      <a href="otros.html" class="btn">Explorar</a>
+        Si se activa la entrada En, la función ajusta el nivel actual a StSp + offset "B" durante 100 ms.
+        Seguidamente, partiendo del nivel StSp + offset "B" y dependiendo de la conexión de Sel, la función efectúa un desplazamiento al nivel 1 o 2 con la aceleración indicada en Rate.
+        Si se activa la entrada St, la función efectúa un desplazamiento al nivel StSp + offset "B" con la aceleración indicada en Rate. Seguidamente, el nivel StSp + offset "B" se mantiene durante 100 ms. Al cabo de 100 ms, el nivel se ajusta a offset "B". El valor escalado (salida AQ) es 0.
+        Si se activa la entrada St, la función solo puede reiniciarse tras haberse desactivado las entradas St y En.
+        Si se ha modificado la entrada Sel y dependiendo de la conexión de Sel, la función efectúa un desplazamiento desde el nivel actual hasta el nivel de destino a la velocidad indicada.
+        Si se desactiva la entrada En, la función ajusta inmediatamente el nivel actual al offset "B".
+        El nivel actual se actualiza cada 100 ms. Tenga en cuenta la siguiente relación entre la salida AQ y el nivel actual:
+        Salida AQ = (nivel actual - offset "B") / ganancia "A".
     </div>
+    
     <div class="card">
       <h3>Regulador PI</h3>
       <p>
-        Controlan acciones dependientes del tiempo, como retrasos o duraciones específicas.
-      </p>
-      <a href="temporizadores.html" class="btn">Explorar</a>
+        Si la entrada A/M se pone a 0, la función especial emite en la salida AQ el valor que haya ajustado en el parámetro Mq.
+        Si la entrada A/M se pone a 1, se inicia el modo automático. El valor Mq se adopta como suma integral y la función del regulador comienza a realizar los cálculos.
+        En las fórmulas se utiliza el valor real PV para el cálculo:
+        Valor actualizado PV = (PV • ganancia) + offset
+        Si el valor actualizado PV = SP, la función especial no modifica el valor en AQ.
+        Dir = hacia arriba (+) (cifras 1 y 3 del cronograma)
+        - Si el valor actualizado PV es mayor que SP, la función especial reduce el valor en AQ.
+        - Si el valor actualizado PV es menor que SP, la función especial aumenta el valor en AQ.
+        Dir = hacia abajo (-) (cifra 2 del cronograma)
+        - Si el valor actualizado PV es mayor que SP, la función especial aumenta el valor en AQ.
+        - Si el valor actualizado PV es menor que SP, la función especial reduce el valor en AQ.
+        Si se produce un fallo, AQ se sigue incrementando o reduciendo hasta que el valor actualizado PV vuelva a equivaler a SP. La rapidez con la que cambia AQ depende de los parámetros KC y TI.
+        Si el valor de la entrada PV excede el parámetro Max, el valor actualizado PV adopta el valor de Max. Si el valor de PV es inferior al parámetro Min, el valor actualizado PV adopta el valor Min.
+        Si la entrada R se pone a 1, se desactiva la salida AQ. Mientras R está activada, la entrada A/M permanece bloqueada.
     </div>
 
     <div class="card">
       <h3>PWM (Modulación por ancho de pulso)o</h3>
       <p>
-        Permiten llevar registro de eventos o ciclos repetitivos en un proceso automatizado.
-      </p>
-      <a href="contadores.html" class="btn">Explorar</a>
+        La función lee el valor de la señal aplicada en la entrada analógica Ax.
+        Este valor se multiplica por el parámetro A (Gain). El parámetro B (Offset) se suma al producto como se indica a continuación:
+        (Ax • Gain) + Offset = valor real Ax
+        El bloque de función calcula la proporción del valor real Ax en el rango. El bloque activa la salida digital Q durante la misma proporción del parámetro T (tiempo periódico). Por lo demás, Q se desactiva durante el tiempo restante.
     </div>
 
     <div class="card">
       <h3>Filtro analógico</h3>
       <p>
-        Trabajan con señales analógicas, procesando valores continuos para control preciso.
-      </p>
-      <a href="analogicos.html" class="btn">Explorar</a>
+        La función lee la señal analógica en la entrada Ax de acuerdo con el número de muestras configurado (Sn) y visualiza el valor medio.
     </div>
 
     <div class="card">
       <h3>Máx/Mín</h3>
       <p>
-        Incluyen operaciones matemáticas, de comparación, conversión y más funciones auxiliares.
-      </p>
-      <a href="otros.html" class="btn">Explorar</a>
+        ERst = 1 y En = 0: la función pone el valor AQ a 0.
+        ERst = 1 y En = 1: la función envía un valor a AQ, dependiendo del ajuste de Mode y S1.
+        ERst = 0 y En = 0: la función mantiene el valor de AQ en el valor actual.
+        ERst = 0 y En = 1: la función envía un valor a AQ, dependiendo del ajuste de Mode y S1.
+        Modo = 0: la función pone a AQ al valor mínimo
+        Modo = 1: la función pone a AQ al valor máximo
+        Modo = 2 y S1 = 0: la función pone a AQ al valor mínimo
+        Modo = 2 y S1 = 1: la función pone a AQ al valor máximo
+        Modo = 3: la función emite el valor actual de la entrada analógica.
     </div>
+    
     <div class="card">
       <h3>Valor medio</h3>
       <p>
-        Controlan acciones dependientes del tiempo, como retrasos o duraciones específicas.
-      </p>
-      <a href="temporizadores.html" class="btn">Explorar</a>
+        La función lee la señal de entrada analógica de acuerdo con el tiempo de muestreo ajustado St y el número de muestras Sn y visualiza el valor medio. Una señal en R pone AQ a 0.
     </div>
 
   </section>
