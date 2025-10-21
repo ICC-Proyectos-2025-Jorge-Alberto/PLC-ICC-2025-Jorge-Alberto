@@ -1,59 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio PLC – Jorge & Alberto</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto PLC - Jorge & Alberto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="hero">
+        <h1>Proyecto Final de PLC - Ingeniería en Control y Computación</h1>
+        <h2>Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano</h2>
+    </header>
 
-  <!-- Encabezado -->
-  <header>
-    <div class="header-content">
-      <h1>Portafolio de Proyectos PLC</h1>
-      <p>Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano</p>
-      <p>Materia: PLC – Ingeniería en Control y Computación</p>
-    </div>
-  </header>
+    <main class="container">
+        <section class="intro">
+            <h2>Introducción</h2>
+            <p>
+                En el presente sitio web se recopilan y documentan los proyectos y prácticas realizadas 
+                dentro de la materia de <strong>Control Lógico Programable (PLC)</strong>, 
+                empleando el software <strong>LOGO!Soft Comfort</strong> de Siemens. 
+                Este espacio tiene como propósito mostrar de manera ordenada y comprensible 
+                cada una de las simulaciones y ejercicios desarrollados durante el curso, 
+                incluyendo la descripción teórica de los bloques, su aplicación práctica, 
+                y la descarga de los programas correspondientes.
+            </p>
+        </section>
 
-  <!-- Sobre nosotros -->
-  <section id="sobre-nosotros">
-    <div class="container">
-      <h2>Introducción</h2>
-      <p>Somos estudiantes de Ingeniería en Control y Computación, apasionados por la automatización industrial y el diseño de sistemas de control. En este portafolio presentamos nuestras prácticas y proyectos desarrollados en LOGO!Soft Comfort.</p>
-    </div>
-  </section>
+        <section class="plc-info">
+            <h2>¿Qué es un PLC?</h2>
+            <p>
+                Un <strong>Controlador Lógico Programable (PLC, Programmable Logic Controller)</strong> 
+                es un dispositivo electrónico diseñado para automatizar procesos industriales y de control. 
+                Está compuesto por una CPU, módulos de entrada/salida y memoria programable, 
+                y se encarga de recibir señales de sensores o dispositivos de entrada, 
+                procesarlas según una lógica preestablecida y generar salidas hacia actuadores, 
+                motores o sistemas de control.
+            </p>
+            <p>
+                A diferencia de los sistemas de control convencionales basados en relés o temporizadores mecánicos, 
+                los PLC ofrecen flexibilidad, fiabilidad y facilidad de reprogramación, 
+                lo que los hace ideales para sistemas automatizados en plantas industriales, 
+                control de maquinaria, gestión de iluminación, monitoreo ambiental, entre otros.
+            </p>
+        </section>
 
-  <!-- Proyectos -->
-  <section id="proyectos">
-    <div class="container">
-      <h2>Bloques especiales</h2>
-      <div class="grid">
+        <section class="logo-soft">
+            <h2>¿Qué es LOGO!Soft Comfort?</h2>
+            <p>
+                <strong>LOGO!Soft Comfort</strong> es el entorno de programación oficial de los microcontroladores 
+                <strong>Siemens LOGO!</strong>, utilizado ampliamente en entornos educativos e industriales 
+                para diseñar, simular y probar programas de automatización. 
+                Su interfaz gráfica permite crear diagramas de bloques funcionales (FBD) 
+                que facilitan la comprensión y diseño de sistemas lógicos.
+            </p>
+            <p>
+                En este software se pueden programar diferentes tipos de bloques lógicos, temporizadores, 
+                contadores, comparadores analógicos, y muchos otros elementos que forman parte del 
+                control automatizado. Además, permite simular el comportamiento del sistema antes de su implementación física.
+            </p>
+        </section>
 
-        <!-- Tarjeta 1 -->
-        <a href="practica1.html" class="card">
-          <img src="img/placeholder.png" alt="Práctica 1">
-          <h3>Práctica 1</h3>
-          <p>Simulación básica de arranque de motor con LOGO!Soft Comfort.</p>
-        </a>
+        <section class="proyecto-descripcion">
+            <h2>Objetivo del Proyecto</h2>
+            <p>
+                Este proyecto tiene como finalidad integrar todos los conocimientos adquiridos 
+                en la materia de PLC, mediante el desarrollo de una <strong>página web interactiva</strong> 
+                que contenga todas las prácticas y ejemplos realizados en LOGO!Soft Comfort. 
+                El sitio incluirá una descripción detallada del funcionamiento de los bloques especiales, 
+                ejemplos prácticos, imágenes de simulaciones, y enlaces para la descarga de los programas.
+            </p>
+            <p>
+                La estructura del sitio está organizada para facilitar la exploración de cada bloque 
+                y sus aplicaciones, permitiendo visualizar tanto el diseño lógico como su función dentro 
+                de un sistema automatizado. Con esto se busca crear una herramienta de aprendizaje 
+                y consulta que refleje el trabajo colaborativo y técnico de los autores.
+            </p>
+        </section>
 
-        <!-- Tarjeta 2 -->
-        <a href="practica2.html" class="card">
-          <img src="img/placeholder.png" alt="Práctica 2">
-          <h3>Práctica 2</h3>
-          <p>Control de luces mediante lógica de temporizadores en LOGO!Soft.</p>
-        </a>
+        <section class="navegacion">
+            <h2>Secciones del Sitio</h2>
+            <ul>
+                <li><a href="descripciondelosbloquesespeciales.html">Bloques Especiales</a> – Descripción y clasificación de bloques especiales (temporizadores, contadores, analógicos y otros).</li>
+                <li><a href="ejemplosparalosbloques.html">Ejemplos Prácticos</a> – Conjunto de programas aplicados, con imágenes y descarga de simulaciones.</li>
+                <li><a href="nosotros.html">Sobre Nosotros</a> – Información sobre los autores y el desarrollo del proyecto.</li>
+            </ul>
+        </section>
+    </main>
 
-      </div>
-    </div>
-  </section>
+    <footer>
+        <p>© 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano — Ingeniería en Control y Computación</p>
+    </footer>
+</body>
+</html>
 
-  <!-- Footer -->
-  <footer>
-    <p>Portafolio desarrollado por Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano © 2025</p>
-  </footer>
 
 </body>
 </html>
