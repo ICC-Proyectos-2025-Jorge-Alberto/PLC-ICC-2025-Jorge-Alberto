@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloques Contadores | Proyectos PLC</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* Ajuste para una sola columna */
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 90%;
+      max-width: 1000px;
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
 
+<body>
+  <header>
+    <a href="funciones_esp.html" class="back-btn">← Volver</a>
+    <h1>Bloques Contadores</h1>
+  </header>
+
+  <section class="intro">
+    <p>
+      Los <strong>bloques analógicos</strong> permiten el tratamiento de señales continuas dentro del PLC, 
+      procesando valores numéricos que representan magnitudes físicas como temperatura, presión o velocidad. 
+      Su función principal es facilitar el control y ajuste de procesos en los que los valores varían de manera gradual.
+    </p>
+  </section>
+
+  <section class="column">
+
+    <div class="card">
+      <h3>Contador adelante/atrás</h3>
+      <p>Permite combinar operaciones matemáticas como suma, resta, multiplicación y división, con posibilidad de incluir paréntesis. Se emplea para el cálculo entre variables analógicas y admite redondeo al número entero más cercano.</p>
+      <div class="img-container">
+        <img src="img/contador_updown_block.png" alt="Contador Adelante/atrás">
+        <img src="img/contador_updown_function.png" alt="Funcionamiento Contador">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Contador de horas de funcionamiento</h3>
+      <p>Compara dos señales analógicas aplicando factores de ganancia (A) y desplazamiento (B). Genera una salida booleana cuando la comparación cumple una condición establecida (>, <, =, etc.).</p>
+      <div class="img-container">
+        <img src="img/contador_horas_block.png" alt="Contador de horas">
+        <img src="img/contador_horas_function.png" alt="Funcionamiento contador">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Selector de umbral</h3>
+      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>
+      <div class="img-container">
+        <img src="img/selector_umbral_block.png" alt="Bloque selector de umbral">
+        <img src="img/selector_umbral_function.png" alt="Funcionamiento del selector de umbral">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano
+  </footer>
+</body>
+</html>
