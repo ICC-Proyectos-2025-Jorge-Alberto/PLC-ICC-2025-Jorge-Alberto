@@ -1,137 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bloques Analógicos | Proyectos PLC</title>
+  <link rel="stylesheet" href="estilos.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
+    /* Ajuste para una sola columna */
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 90%;
+      max-width: 900px;
+      margin-bottom: 3rem;
     }
-body {
-  background-color: #f4f6f8;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #1e2a38;
-  color: #fff;
-  width: 100%;
-  text-align: center;
-  padding: 1.5rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-/* Botón de regreso */
-.back-btn {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  text-decoration: none;
-  background-color: #32465a;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.back-btn:hover {
-  background-color: #4b627a;
-  transform: translateY(-50%) scale(1.05);
-}
-
-.intro {
-  max-width: 900px;
-  text-align: center;
-  margin: 2rem 1rem;
-  line-height: 1.6;
-}
-
-.intro p {
-  font-size: 1rem;
-  color: #444;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  width: 90%;
-  max-width: 1100px;
-  margin-bottom: 3rem;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 2rem 1rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-  color: #1e2a38;
-  margin-bottom: 0.8rem;
-}
-
-.card p {
-  color: #555;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  text-align: justify;
-}
-
-.img-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.8rem;
-}
-
-.img-container img {
-  width: 80%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
-}
-
-.img-container img:hover {
-  transform: scale(1.03);
-}
-
-footer {
-  text-align: center;
-  background: #1e2a38;
-  color: #fff;
-  width: 100%;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  margin-top: auto;
-}
   </style>
 </head>
 
@@ -143,93 +27,130 @@ footer {
 
   <section class="intro">
     <p>
-      Los <strong>bloques analógicos</strong> permiten trabajar con señales continuas dentro del PLC, 
+      Los <strong>bloques analógicos</strong> permiten el tratamiento de señales continuas dentro del PLC, 
       procesando valores numéricos que representan magnitudes físicas como temperatura, presión o velocidad. 
-      Estos bloques facilitan el control y ajuste preciso de procesos donde los valores varían de manera gradual.
+      Su función principal es facilitar el control y ajuste de procesos en los que los valores varían de manera gradual.
     </p>
   </section>
 
-  <section class="grid">
+  <section class="column">
+
     <div class="card">
       <h3>Instrucción Aritmética</h3>
-      <p>Combina operaciones matemáticas (+, −, ×, ÷) y paréntesis para formar ecuaciones entre señales analógicas, con redondeo automático al entero más cercano.</p>
+      <p>Permite combinar operaciones matemáticas como suma, resta, multiplicación y división, con posibilidad de incluir paréntesis. Se emplea para el cálculo entre variables analógicas y admite redondeo al número entero más cercano.</p>
       <div class="img-container">
         <img src="img/arithmetic_block.png" alt="Bloque aritmético">
         <img src="img/arithmetic_function.png" alt="Funcionamiento aritmético">
       </div>
     </div>
 
-<div class="card">
-  <h3>Comparador Aritmético</h3>
-  <p>Compara dos señales analógicas aplicando factores de ganancia (A) y desplazamiento (B), activando la salida según la diferencia y umbrales definidos.</p>
-  <div class="img-container">
-    <img src="img/comparator_block.png" alt="Bloque comparador">
-    <img src="img/comparator_function.png" alt="Funcionamiento del comparador">
-  </div>
-</div>
+    <div class="card">
+      <h3>Comparador Aritmético</h3>
+      <p>Compara dos señales analógicas aplicando factores de ganancia (A) y desplazamiento (B). Genera una salida booleana cuando la comparación cumple una condición establecida (>, <, =, etc.).</p>
+      <div class="img-container">
+        <img src="img/comparator_block.png" alt="Bloque comparador">
+        <img src="img/comparator_function.png" alt="Funcionamiento del comparador">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Conmutador Analógico de Valor Umbral</h3>
-  <p>Activa o desactiva la salida Q según si la señal de entrada supera un valor de umbral configurado.</p>
-  <div class="img-container">
-    <img src="img/threshold_block.png" alt="Bloque conmutador de umbral">
-    <img src="img/threshold_function.png" alt="Funcionamiento del conmutador de umbral">
-  </div>
-</div>
+    <div class="card">
+      <h3>Conmutador Analógico de Valor Umbral</h3>
+      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>
+      <div class="img-container">
+        <img src="img/threshold_switch_block.png" alt="Bloque conmutador de umbral">
+        <img src="img/threshold_switch_function.png" alt="Funcionamiento del conmutador de umbral">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Amplificador Analógico</h3>
-  <p>Multiplica la entrada por una ganancia (A) y suma un desplazamiento (B), amplificando o ajustando la señal analógica de salida.</p>
-  <div class="img-container">
-    <img src="img/amplifier_block.png" alt="Bloque amplificador">
-    <img src="img/amplifier_function.png" alt="Funcionamiento amplificador">
-  </div>
-</div>
+    <div class="card">
+      <h3>Amplificador Analógico</h3>
+      <p>Multiplica la señal de entrada por una ganancia (A) y suma un desplazamiento (B), lo que permite amplificar o ajustar la escala de una variable analógica.</p>
+      <div class="img-container">
+        <img src="img/amplifier_block.png" alt="Bloque amplificador">
+        <img src="img/amplifier_function.png" alt="Funcionamiento amplificador">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Vigilancia del Valor Analógico</h3>
-  <p>Supervisa si una señal analógica se mantiene dentro de un rango respecto a un valor guardado; activa una salida si se desvía fuera del rango permitido.</p>
-  <div class="img-container">
-    <img src="img/monitor_block.png" alt="Bloque vigilancia analógica">
-    <img src="img/monitor_function.png" alt="Funcionamiento vigilancia">
-  </div>
-</div>
+    <div class="card">
+      <h3>Vigilancia del Valor Analógico</h3>
+      <p>Monitorea una señal analógica y detecta si el valor está dentro o fuera de un rango definido. Puede emplearse para control de seguridad o detección de fallas.</p>
+      <div class="img-container">
+        <img src="img/analog_watch_block.png" alt="Bloque vigilancia">
+        <img src="img/analog_watch_function.png" alt="Funcionamiento vigilancia analógica">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Conmutador Analógico Diferencial</h3>
-  <p>Activa o reinicia la salida en función de un umbral y un valor diferencial (Δ), calculando el punto de desconexión automáticamente.</p>
-  <div class="img-container">
-    <img src="img/diff_switch_block.png" alt="Bloque diferencial">
-    <img src="img/diff_switch_function.png" alt="Funcionamiento diferencial">
-  </div>
-</div>
+    <div class="card">
+      <h3>Conmutador Analógico de Valor Umbral Diferencial</h3>
+      <p>Funciona similar al conmutador de umbral, pero incorpora histéresis: dos valores límite (alto y bajo) para evitar oscilaciones al activarse y desactivarse la salida.</p>
+      <div class="img-container">
+        <img src="img/diff_threshold_block.png" alt="Bloque diferencial">
+        <img src="img/diff_threshold_function.png" alt="Funcionamiento conmutador diferencial">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>MUX Analógico</h3>
-  <p>Selecciona entre hasta cuatro valores analógicos (V1–V4) según las entradas de selección S1 y S2, entregando el valor elegido en AQ.</p>
-  <div class="img-container">
-    <img src="img/mux_block.png" alt="Bloque MUX">
-    <img src="img/mux_function.png" alt="Funcionamiento MUX">
-  </div>
-</div>
+    <div class="card">
+      <h3>Multiplexor (MUX) Analógico</h3>
+      <p>Selecciona una de varias señales de entrada analógicas para conectarla a una sola salida. Es útil cuando se deben procesar múltiples señales en un solo canal de cálculo o visualización.</p>
+      <div class="img-container">
+        <img src="img/mux_block.png" alt="Bloque MUX">
+        <img src="img/mux_function.png" alt="Funcionamiento MUX">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Rampa Analógica</h3>
-  <p>Genera una señal que aumenta o disminuye gradualmente (rampa) entre niveles definidos, controlando la velocidad mediante el parámetro Rate.</p>
-  <div class="img-container">
-    <img src="img/ramp_block.png" alt="Bloque rampa">
-    <img src="img/ramp_function.png" alt="Funcionamiento rampa">
-  </div>
-</div>
+    <div class="card">
+      <h3>Rampa Analógica</h3>
+      <p>Genera un valor analógico que varía progresivamente desde un valor inicial hasta uno final a una velocidad determinada. Se utiliza para suavizar transiciones o generar señales de prueba.</p>
+      <div class="img-container">
+        <img src="img/ramp_block.png" alt="Bloque rampa">
+        <img src="img/ramp_function.png" alt="Funcionamiento rampa">
+      </div>
+    </div>
 
-<div class="card">
-  <h3>Regulador PI</h3>
-  <p>Implementa un control proporcional-integral que ajusta automáticamente la salida para mantener la variable de proceso cerca del valor de referencia.</p>
-  <div class="img-container">
-    <img src="img/pi_block.png" alt="Bloque regulador PI">
-    <img src="img/pi_function.png" alt="Funcionamiento PI">
-  </div>
-</div>
+    <div class="card">
+      <h3>Regulador PI</h3>
+      <p>Ejecuta un control proporcional-integral sobre una señal de error entre un valor de consigna y uno medido. Corrige desviaciones de manera continua en sistemas de lazo cerrado.</p>
+      <div class="img-container">
+        <img src="img/pi_controller_block.png" alt="Bloque PI">
+        <img src="img/pi_controller_function.png" alt="Funcionamiento PI">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Generador PWM Analógico</h3>
+      <p>Convierte una señal analógica en una modulación por ancho de pulso (PWM), adecuada para el control de velocidad o intensidad en motores y actuadores.</p>
+      <div class="img-container">
+        <img src="img/pwm_block.png" alt="Bloque PWM">
+        <img src="img/pwm_function.png" alt="Funcionamiento PWM">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Filtro Analógico</h3>
+      <p>Reduce el ruido o las variaciones rápidas en una señal analógica, manteniendo únicamente las variaciones suaves. Se usa para estabilizar mediciones o señales de sensores.</p>
+      <div class="img-container">
+        <img src="img/filter_block.png" alt="Bloque filtro">
+        <img src="img/filter_function.png" alt="Funcionamiento filtro">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Máximo / Mínimo</h3>
+      <p>Compara varias señales de entrada y entrega el valor más alto o más bajo, según se configure. Permite identificar límites en un conjunto de variables analógicas.</p>
+      <div class="img-container">
+        <img src="img/maxmin_block.png" alt="Bloque max/min">
+        <img src="img/maxmin_function.png" alt="Funcionamiento max/min">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Valor Medio</h3>
+      <p>Calcula el promedio de varias señales de entrada analógicas. Se utiliza para obtener una medida representativa de un grupo de sensores o lecturas.</p>
+      <div class="img-container">
+        <img src="img/average_block.png" alt="Bloque valor medio">
+        <img src="img/average_function.png" alt="Funcionamiento valor medio">
+      </div>
+    </div>
 
   </section>
 
