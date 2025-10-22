@@ -91,160 +91,160 @@
       </div>
     </div>
 
-    <div class="card">
-      <h3>Retardo a la conexión con memoria</h3>
-      <div class="img-container">
-        <img src="img/retardo a la conexion con memoria.png" alt="Retardo con memoria">
-        <p>
-          Funciona igual que el retardo a la conexión, pero el tiempo transcurrido se mantiene incluso si la señal de entrada se interrumpe.  
-          <br><strong>Uso común:</strong> sistemas donde puede haber cortes breves de señal, pero se desea continuar la cuenta.  
-          <br><strong>Nota:</strong> el temporizador continúa desde el valor almacenado, garantizando estabilidad en señales inestables.
-        </p>
-        <img src="img/retardo_memoria_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Retardo a la conexión con memoria</h3>
+  <div class="img-container">
+    <img src="img/retardo a la conexion con memoria.png" alt="Retardo con memoria">
+    <p>
+      Este bloque combina las características de un temporizador de retardo a la conexión con la capacidad de retener el tiempo acumulado ante interrupciones breves en la señal de entrada. A diferencia del temporizador convencional, el conteo del tiempo no se reinicia al perder la señal, sino que continúa desde el valor previamente alcanzado. Esta función resulta muy útil cuando la entrada puede sufrir fluctuaciones o caídas momentáneas, ya que el bloque mantiene la coherencia temporal sin necesidad de reiniciar el proceso.  
+      <br><strong>Uso común:</strong> sistemas donde puede haber cortes breves de señal, pero se desea continuar la cuenta.  
+      <br><strong>Nota:</strong> el temporizador continúa desde el valor almacenado, garantizando estabilidad en señales inestables.
+    </p>
+    <img src="img/retardo_memoria_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Relé de barrido (salida de impulsos)</h3>
-      <div class="img-container">
-        <img src="img/rele de barrido.png" alt="Relé de barrido">
-        <p>
-          Genera impulsos periódicos en la salida con tiempos de encendido (Ton) y apagado (Toff) definidos.  
-          Funciona igual que el retardo a la conexión, pero el tiempo transcurrido se mantiene incluso si la señal de entrada se interrumpe.
-          <br><strong>Uso común:</strong> parpadeo de luces, señalización o ciclos repetitivos.  
-          <br><strong>Nota:</strong> la salida inicia con la fase de encendido al activarse la entrada.
-        </p>
-        <img src="img/rele_barrido_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Relé de barrido (salida de impulsos)</h3>
+  <div class="img-container">
+    <img src="img/rele de barrido.png" alt="Relé de barrido">
+    <p>
+      Este bloque genera una secuencia de impulsos periódicos en la salida, alternando entre estados activos y pasivos con duraciones de encendido (Ton) y apagado (Toff) configurables. El comportamiento del relé de barrido permite establecer ritmos cíclicos muy precisos, útiles para tareas repetitivas o señales de advertencia. Además, puede emplearse para controlar dispositivos que requieren activaciones intermitentes, como indicadores luminosos, alarmas o válvulas de purga en sistemas automáticos.  
+      <br><strong>Uso común:</strong> parpadeo de luces, señalización o ciclos repetitivos.  
+      <br><strong>Nota:</strong> la salida inicia con la fase de encendido al activarse la entrada.
+    </p>
+    <img src="img/rele_barrido_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Relé de barrido activado por flancos</h3>
-      <div class="img-container">
-        <img src="img/rele de barrido disparado por flanco.png" alt="Relé de barrido por flanco">
-        <p>
-          Emite un único impulso en respuesta a un flanco de la señal de entrada (subida o bajada).  
-          <br><strong>Uso común:</strong> detección de pulsos, conteo o activación momentánea.  
-          <br><strong>Nota:</strong> la duración del impulso es configurable; ignora niveles sostenidos.
-        </p>
-        <img src="img/rele_flanco_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Relé de barrido activado por flancos</h3>
+  <div class="img-container">
+    <img src="img/rele de barrido disparado por flanco.png" alt="Relé de barrido por flanco">
+    <p>
+      Este bloque está diseñado para generar un impulso único cuando detecta un cambio en la señal de entrada, ya sea un flanco ascendente o descendente, según la configuración. Su función se basa en reaccionar ante transiciones rápidas, lo que lo convierte en una herramienta ideal para captar eventos breves o disparos precisos dentro del sistema. El tiempo de duración del impulso generado puede ajustarse, asegurando compatibilidad con distintos tipos de procesos de control o conteo.  
+      <br><strong>Uso común:</strong> detección de pulsos, conteo o activación momentánea.  
+      <br><strong>Nota:</strong> la duración del impulso es configurable; ignora niveles sostenidos.
+    </p>
+    <img src="img/rele_flanco_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Generador de impulsos asíncrono</h3>
-      <div class="img-container">
-        <img src="img/generador de impulsos asincronos.png" alt="Generador asíncrono">
-        <p>
-          Crea impulsos continuos independientemente del estado de la entrada.  
-          <br><strong>Uso común:</strong> simulación de señales periódicas o pruebas de respuesta del sistema.  
-          <br><strong>Nota:</strong> se mantiene activo mientras la entrada permanezca habilitada.
-        </p>
-        <img src="img/generador_asincrono_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Generador de impulsos asíncrono</h3>
+  <div class="img-container">
+    <img src="img/generador de impulsos asincronos.png" alt="Generador asíncrono">
+    <p>
+      Este bloque genera una señal periódica de forma continua e independiente del estado de la entrada. Una vez habilitado, produce una secuencia constante de impulsos, manteniendo un ritmo determinado por los parámetros de tiempo configurados. Su funcionamiento no depende de flancos ni del valor lógico de la entrada, por lo que se usa ampliamente en pruebas de simulación, sistemas de diagnóstico y en la generación de señales de reloj o sincronización dentro de un programa.  
+      <br><strong>Uso común:</strong> simulación de señales periódicas o pruebas de respuesta del sistema.  
+      <br><strong>Nota:</strong> se mantiene activo mientras la entrada permanezca habilitada.
+    </p>
+    <img src="img/generador_asincrono_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Generador aleatorio</h3>
-      <div class="img-container">
-        <img src="img/generador aleatorio.png" alt="Generador aleatorio">
-        <p>
-          Produce impulsos de salida con intervalos aleatorios dentro de un rango establecido.  
-          <br><strong>Uso común:</strong> simulación de comportamientos no deterministas o pruebas de sistemas.  
-          <br><strong>Nota:</strong> cada ciclo genera un valor distinto, no repetible.
-        </p>
-        <img src="img/generador_aleatorio_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Generador aleatorio</h3>
+  <div class="img-container">
+    <img src="img/generador aleatorio.png" alt="Generador aleatorio">
+    <p>
+      Este bloque permite generar impulsos en intervalos de tiempo variables y no deterministas dentro de un rango definido por el usuario. A diferencia de los generadores periódicos, el generador aleatorio introduce una componente de variabilidad en la salida, simulando comportamientos impredecibles o aleatorios. Esto es especialmente útil en aplicaciones experimentales, simulaciones de procesos naturales o sistemas donde se requiere probar la reacción del control ante entradas no regulares.  
+      <br><strong>Uso común:</strong> simulación de comportamientos no deterministas o pruebas de sistemas.  
+      <br><strong>Nota:</strong> cada ciclo genera un valor distinto, no repetible.
+    </p>
+    <img src="img/generador_aleatorio_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Interruptor de alumbrado para escalera</h3>
-      <div class="img-container">
-        <img src="img/interruptor de alumbrado.png" alt="Interruptor de escalera">
-        <p>
-          Permite mantener una salida activa (por ejemplo, una lámpara) durante un tiempo predefinido tras recibir un pulso.  
-          <br><strong>Uso común:</strong> control de iluminación temporal.  
-          <br><strong>Nota:</strong> el temporizador se reinicia si se vuelve a pulsar antes de que expire el tiempo.
-        </p>
-        <img src="img/interruptor_escalera_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Interruptor de alumbrado para escalera</h3>
+  <div class="img-container">
+    <img src="img/interruptor de alumbrado.png" alt="Interruptor de escalera">
+    <p>
+      Este bloque implementa una función de temporizador activada por un pulso, comúnmente utilizada para controlar la iluminación de pasillos o escaleras. Al recibir una señal de entrada, activa una salida durante un tiempo predeterminado, garantizando que las luces se apaguen automáticamente después del lapso configurado. Su comportamiento puede reiniciarse con pulsos adicionales, lo que permite extender el tiempo de encendido mientras se detecte actividad.  
+      <br><strong>Uso común:</strong> control de iluminación temporal.  
+      <br><strong>Nota:</strong> el temporizador se reinicia si se vuelve a pulsar antes de que expire el tiempo.
+    </p>
+    <img src="img/interruptor_escalera_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Interruptor bifuncional</h3>
-      <div class="img-container">
-        <img src="img/interruptor bifuncional.png" alt="Interruptor bifuncional">
-        <p>
-          Combina la función de interruptor manual y temporizador, permitiendo conmutar entre modo automático (por tiempo) o manual.  
-          <br><strong>Uso común:</strong> sistemas que requieren control mixto, como ventilación o bombas.  
-          <br><strong>Nota:</strong> los modos se alternan según la entrada de control configurada.
-        </p>
-        <img src="img/interruptor_bifuncional_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Interruptor bifuncional</h3>
+  <div class="img-container">
+    <img src="img/interruptor bifuncional.png" alt="Interruptor bifuncional">
+    <p>
+      Este bloque combina dos modos de operación en un solo componente: un funcionamiento manual y otro automático basado en tiempo. El usuario puede conmutar entre ambos modos mediante una señal de control, lo que lo hace ideal para sistemas donde se necesita tanto supervisión humana como autonomía. En modo automático, actúa como un temporizador convencional, mientras que en modo manual, permite mantener la salida activa sin límite hasta que se intervenga nuevamente.  
+      <br><strong>Uso común:</strong> sistemas que requieren control mixto, como ventilación o bombas.  
+      <br><strong>Nota:</strong> los modos se alternan según la entrada de control configurada.
+    </p>
+    <img src="img/interruptor_bifuncional_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Temporizador semanal</h3>
-      <div class="img-container">
-        <img src="img/temporizador semanal.png" alt="Temporizador semanal">
-        <p>
-          Permite programar activaciones y desactivaciones de salidas según los días y horarios de la semana.  
-          <br><strong>Uso común:</strong> control de iluminación, climatización o sistemas de riego automáticos.  
-          <br><strong>Nota:</strong> puede configurarse hasta 56 intervalos por semana.
-        </p>
-        <img src="img/temporizador_semanal_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Temporizador semanal</h3>
+  <div class="img-container">
+    <img src="img/temporizador semanal.png" alt="Temporizador semanal">
+    <p>
+      Este bloque actúa como un reloj programable que permite definir horarios de encendido y apagado de una salida a lo largo de la semana. Mediante su interfaz, es posible configurar intervalos de tiempo específicos para cada día, adaptándose a rutinas o necesidades de funcionamiento regulares. Es una herramienta muy utilizada para automatizar tareas repetitivas sin intervención del usuario, como la iluminación, la climatización o el riego.  
+      <br><strong>Uso común:</strong> control de iluminación, climatización o sistemas de riego automáticos.  
+      <br><strong>Nota:</strong> puede configurarse hasta 56 intervalos por semana.
+    </p>
+    <img src="img/temporizador_semanal_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Temporizador anual</h3>
-      <div class="img-container">
-        <img src="img/temporizador anual.png" alt="Temporizador anual">
-        <p>
-          Programa eventos que se repiten en fechas específicas del año, como vacaciones o temporadas.  
-          <br><strong>Uso común:</strong> control estacional de sistemas o iluminación decorativa.  
-          <br><strong>Nota:</strong> compatible con LOGO! 0BA7 y versiones posteriores.
-        </p>
-        <img src="img/temporizador_anual_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Temporizador anual</h3>
+  <div class="img-container">
+    <img src="img/temporizador anual.png" alt="Temporizador anual">
+    <p>
+      Este bloque extiende la funcionalidad del temporizador semanal al permitir programar eventos que se repiten una vez al año en fechas específicas. Es útil para automatizar funciones que dependen de temporadas o periodos prolongados, como iluminación navideña, sistemas de calefacción, o control de riego estacional. Cada evento puede configurarse con fecha de inicio, fin y duración, adaptándose a distintos calendarios de operación.  
+      <br><strong>Uso común:</strong> control estacional de sistemas o iluminación decorativa.  
+      <br><strong>Nota:</strong> compatible con LOGO! 0BA7 y versiones posteriores.
+    </p>
+    <img src="img/temporizador_anual_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Reloj astronómico (solo 0BA7 y versiones posteriores)</h3>
-      <div class="img-container">
-        <img src="img/temporizador astronomico.png" alt="Reloj astronómico">
-        <p>
-          Calcula los horarios de amanecer y atardecer automáticamente según la ubicación geográfica y la fecha.  
-          <br><strong>Uso común:</strong> control de iluminación exterior o riego basado en luz solar.  
-          <br><strong>Nota:</strong> requiere configuración de coordenadas geográficas en el LOGO!.
-        </p>
-        <img src="img/reloj_astronomico_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Reloj astronómico (solo 0BA7 y versiones posteriores)</h3>
+  <div class="img-container">
+    <img src="img/temporizador astronomico.png" alt="Reloj astronómico">
+    <p>
+      El reloj astronómico calcula automáticamente las horas de salida y puesta del sol según la fecha y la posición geográfica configurada. Gracias a ello, permite controlar sistemas de iluminación o riego basándose en condiciones naturales de luz solar sin necesidad de ajustar manualmente los horarios. Es ideal para aplicaciones exteriores, donde se requiere un funcionamiento adaptativo que varíe con las estaciones.  
+      <br><strong>Uso común:</strong> control de iluminación exterior o riego basado en luz solar.  
+      <br><strong>Nota:</strong> requiere configuración de coordenadas geográficas en el LOGO!.
+    </p>
+    <img src="img/reloj_astronomico_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
 
-    <div class="card">
-      <h3>Cronómetro (solo 0BA7 y versiones posteriores)</h3>
-      <div class="img-container">
-        <img src="img/cronometro.png" alt="Cronómetro">
-        <p>
-          Mide el tiempo transcurrido entre la activación y desactivación de una señal.  
-          <br><strong>Uso común:</strong> medición de duración de procesos o registro de funcionamiento de máquinas.  
-          <br><strong>Nota:</strong> puede mostrar el tiempo acumulado y reiniciarse manual o automáticamente.
-        </p>
-        <img src="img/cronometro_funcion.png" alt="Funcionamiento del bloque">
-        <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
-    </div>
+<div class="card">
+  <h3>Cronómetro (solo 0BA7 y versiones posteriores)</h3>
+  <div class="img-container">
+    <img src="img/cronometro.png" alt="Cronómetro">
+    <p>
+      Este bloque mide con precisión el tiempo transcurrido entre dos eventos de señal: el inicio y la detención. Puede funcionar en modo acumulativo o reiniciable, lo que permite registrar tiempos parciales o totales en distintos procesos. Es especialmente útil para monitorizar la duración de operaciones industriales, ciclos de máquina, tiempos de respuesta o mantenimiento predictivo. Su lectura puede visualizarse o transmitirse a otros bloques para análisis de rendimiento.  
+      <br><strong>Uso común:</strong> medición de duración de procesos o registro de funcionamiento de máquinas.  
+      <br><strong>Nota:</strong> puede mostrar el tiempo acumulado y reiniciarse manual o automáticamente.
+    </p>
+    <img src="img/cronometro_funcion.png" alt="Funcionamiento del bloque">
+    <a href="proyectos.html" class="btn">Ver proyectos</a>
+  </div>
+</div>
+
 
   </section>
 
