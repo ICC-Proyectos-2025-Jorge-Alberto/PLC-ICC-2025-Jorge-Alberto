@@ -109,104 +109,285 @@
       <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
         <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
         </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloques Temporizadores | Proyectos PLC</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f6fa;
+      color: #222;
+    }
+    header {
+      background-color: #1e2a38;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: #fff;
+      color: #1e2a38;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #dcdcdc;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .intro p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem auto 3rem auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 800px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .card p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.8rem;
+      text-decoration: none;
+      background-color: #1e2a38;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #32455e;
+    }
+
+    footer {
+      background-color: #1e2a38;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="descripciondelosbloquesespeciales.html" class="back-btn">← Volver</a>
+    <h1>Bloques Temporizadores</h1>
+  </header>
+
+  <section class="intro">
+    <p>
+      Los <strong>bloques de temporización</strong> permiten controlar acciones dependientes del tiempo dentro del PLC.
+      Estos elementos ajustan el momento de activación o desactivación de una señal, gestionan pulsos, ciclos y horarios automáticos,
+      facilitando una secuencia ordenada de operaciones. En <strong>LOGO!Soft Comfort V8</strong>, se incluyen distintos tipos
+      de temporizadores que pueden configurarse según las necesidades del sistema.
+    </p>
+  </section>
+
+  <section class="column">
+
+    <div class="card">
+      <h3>Retardo a la conexión (TON)</h3>
+      <img src="img/retardo_a_la_conexion.png" alt="Retardo a la conexión">
+      <p>
+        Retrasa la activación de la salida un tiempo definido después de que la entrada se haya activado. 
+        Es útil para evitar arranques simultáneos o permitir que un proceso previo se complete antes de iniciar el siguiente.
+        <br><strong>Consideraciones:</strong> si la señal de entrada se interrumpe antes de finalizar el tiempo, el contador se reinicia.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
-    
+
+    <div class="card">
+      <h3>Retardo a la desconexión (TOFF)</h3>
+      <img src="img/retardo_a_la_desconexion.png" alt="Retardo a la desconexión">
+      <p>
+        Mantiene la salida activa durante un tiempo determinado después de que la entrada se desactive. 
+        Comúnmente empleado en ventiladores, extractores o sistemas que requieren continuar en funcionamiento tras una señal.
+        <br><strong>Consideraciones:</strong> el tiempo de retardo se reinicia solo al volver a activar la entrada.
+      </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a>
+    </div>
+
+    <div class="card">
+      <h3>Retardo a la conexión/desconexión (TON/TOFF)</h3>
+      <img src="img/retardo_conexion_desconexion.png" alt="Retardo a la conexión y desconexión">
+      <p>
+        Combina ambos retardos (a la conexión y desconexión), permitiendo establecer diferentes tiempos para activar y desactivar una salida.
+        <br><strong>Aplicación:</strong> control de señales con temporización simétrica o escalonada.
+      </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a>
+    </div>
+
+    <div class="card">
+      <h3>Retardo a la conexión con memoria</h3>
+      <img src="img/retardo_memoria.png" alt="Retardo a la conexión con memoria">
+      <p>
+        Similar al TON, pero conserva el tiempo transcurrido aunque la entrada se interrumpa momentáneamente.
+        <br><strong>Ventaja:</strong> asegura que el tiempo acumulado no se pierda ante cortes breves de señal.
+      </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a>
+    </div>
+
+    <div class="card">
+      <h3>Relé de barrido (salida de impulsos)</h3>
+      <img src="img/rele_barrido.png" alt="Relé de barrido">
+      <p>
+        Genera una señal intermitente de salida con tiempos configurables de encendido y apagado. 
+        <br><strong>Uso típico:</strong> parpadeo de luces o simulación de señales periódicas.
+      </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a>
+    </div>
+
+    <div class="card">
+      <h3>Relé de barrido activado por flancos</h3>
+      <img src="img/rele_barrido_flancos.png" alt="Relé de barrido activado por flancos">
+      <p>
+        Emite un pulso corto al detectar un cambio en la señal de entrada (flanco ascendente o descendente).
+        <br><strong>Ideal para:</strong> detectar transiciones rápidas o eventos únicos, como pulsaciones.
+      </p>
+      <a href="proyectos.html" class="btn">Ver proyectos</a>
+    </div>
 
     <div class="card">
       <h3>Generador de impulsos asíncrono</h3>
-      <div class="img-container">
-        <img src="img/generador de impulsos asincronos.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/generador_impulsos_asincrono.png" alt="Generador de impulsos asíncrono">
+      <p>
+        Genera impulsos periódicos independientemente del estado de las entradas.
+        <br><strong>Aplicación:</strong> pruebas de señales repetitivas o simulaciones automáticas.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
       <h3>Generador aleatorio</h3>
-      <div class="img-container">
-        <img src="img/generador aleatorio.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/generador_aleatorio.png" alt="Generador aleatorio">
+      <p>
+        Crea impulsos o retardos aleatorios dentro de un rango configurado. 
+        <br><strong>Uso:</strong> simulaciones o sistemas que requieren eventos impredecibles.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
       <h3>Interruptor de alumbrado para escalera</h3>
-      <div class="img-container">
-        <img src="img/interruptor de alumbrado.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/interruptor_escalera.png" alt="Interruptor de alumbrado">
+      <p>
+        Enciende una salida (como una luz) durante un tiempo determinado después de activar la entrada, 
+        apagándose automáticamente. <br><strong>Usos comunes:</strong> pasillos o zonas con iluminación temporal.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
       <h3>Interruptor bifuncional</h3>
-      <div class="img-container">
-        <img src="img/interruptor bifuncional.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/interruptor_bifuncional.png" alt="Interruptor bifuncional">
+      <p>
+        Permite alternar entre un modo manual y un modo automático de funcionamiento.
+        <br><strong>Ejemplo:</strong> control de iluminación con opción de temporizador o conmutador manual.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
       <h3>Temporizador semanal</h3>
-      <div class="img-container">
-        <img src="img/temporizador semanal.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/temporizador_semanal.png" alt="Temporizador semanal">
+      <p>
+        Permite programar eventos automáticos según los días y horas de la semana.
+        <br><strong>Ejemplo:</strong> encender una bomba o sistema solo en horario laboral.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
       <h3>Temporizador anual</h3>
-      <div class="img-container">
-        <img src="img/temporizador anual.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <img src="img/temporizador_anual.png" alt="Temporizador anual">
+      <p>
+        Programa eventos específicos en fechas del año, útil para automatizaciones estacionales o feriados.
+        <br><strong>Ejemplo:</strong> activar riego o iluminación según la temporada.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
-      <h3>Reloj astronómico (solo 0BA7 y versiones posteriores)</h3>
-      <div class="img-container">
-        <img src="img/temporizador astronomico.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <h3>Reloj astronómico (solo 0BA7 y posteriores)</h3>
+      <img src="img/reloj_astronomico.png" alt="Reloj astronómico">
+      <p>
+        Ajusta las activaciones y desactivaciones de acuerdo con los horarios de amanecer y atardecer.
+        <br><strong>Uso típico:</strong> alumbrado público o iluminación exterior eficiente.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
     <div class="card">
-      <h3>Cronómetro (solo 0BA7 y versiones posteriores)</h3>
-      <div class="img-container">
-        <img src="img/cronometro.png" alt="Bloque selector de umbral">
-      <p>Activa una salida digital cuando una señal analógica supera o cae por debajo de un valor de referencia (umbral). Es útil para generar alarmas o activar actuadores al alcanzar ciertos límites.</p>      
-        <img src="img/selector_umbral_funcion.png" alt="Funcionamiento del selector de umbral">
-        </p>
+      <h3>Cronómetro (solo 0BA7 y posteriores)</h3>
+      <img src="img/cronometro.png" alt="Cronómetro">
+      <p>
+        Mide el tiempo transcurrido mientras una entrada está activa.
+        <br><strong>Uso:</strong> registrar tiempos de operación o medir duraciones de proceso.
+      </p>
       <a href="proyectos.html" class="btn">Ver proyectos</a>
-      </div>
     </div>
 
-    
   </section>
 
   <footer>
-    © 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano
+    © 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano — Ingeniería en Control y Computación
   </footer>
 </body>
 </html>
