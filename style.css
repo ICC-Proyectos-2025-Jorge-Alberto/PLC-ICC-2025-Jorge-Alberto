@@ -201,16 +201,16 @@ footer {
     align-items: center;
     background: #e9f2ff;
     border-radius: 12px;
-    padding: 0.5rem;        /* un poco más de padding para que respire */
+    padding: 0.5rem;
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     margin: 1rem auto;
-    width: 70%;             /* ancho relativo al contenedor */
-    max-width: 500px;       /* nunca más grande que 500px */
+    width: 50%;        /* más pequeño en pantallas grandes */
+    max-width: 400px;  /* nunca más grande que 400px */
 }
 
 .plc-img {
     display: block;
-    max-width: 100%;        /* siempre se ajusta al contenedor */
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
@@ -218,9 +218,9 @@ footer {
 /* ======== AJUSTE PARA MÓVIL ======== */
 @media (max-width: 768px) {
     .plc-img-container {
-        width: 90%;          /* más ancho relativo en móvil */
-        max-width: 300px;    /* tamaño máximo para móvil */
-        padding: 0.3rem;     /* un poco menos de padding */
+        width: 90%;
+        max-width: 300px;
+        padding: 0.3rem;
     }
 }
 
