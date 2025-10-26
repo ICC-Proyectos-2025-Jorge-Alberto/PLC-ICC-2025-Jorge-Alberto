@@ -205,12 +205,12 @@ footer {
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     margin: 1rem auto;
     width: fit-content;
-    max-width: 45%;         /* reducido de 65% a 45% */
+    max-width: 90%;         /* reducido de 65% a 45% */
 }
 
 .plc-img {
     display: block;
-    max-width: 45%;         /* reducido de 65% a 45% */
+    max-width: 100%;         /* reducido de 65% a 45% */
     height: auto;
     border-radius: 10px;
 }
