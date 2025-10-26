@@ -179,12 +179,6 @@ footer {
     position: relative; /* para poder usar ::after */
 }
 
-.navbar li:not(:last-child)::after {
-    content: "|";       /* barra vertical */
-    position: absolute;
-    right: -10px;       /* ajusta según el espacio */
-    color: white;       /* color de la barra */
-}
 
 .navbar a {
     color: #fff;
