@@ -83,22 +83,37 @@
 
         <section class="navegacion">
             <h2>Secciones del Sitio</h2>
-            <!--
-            <ul>
-                <li><a href="funciones_esp.html">Bloques Especiales</a> – Descripción y clasificación de bloques especiales (temporizadores, contadores, analógicos y otros).</li>
-                <li><a href="proyectos.html">Ejemplos Prácticos</a> – Conjunto de programas aplicados, con imágenes y descarga de simulaciones.</li>
-                <li><a href="nosotros.html">Sobre Nosotros</a> – Información sobre los autores y el desarrollo del proyecto.</li>
-            </ul>
-            -->
+            <div class="nav-grid">
+                <a href="funciones_esp.html" class="nav-card">
+                    <h3>Bloques Especiales</h3>
+                    <p>Explora los bloques de temporización, contadores, analógicos y más.</p>
+                </a>
+                <a href="proyectos.html" class="nav-card">
+                    <h3>Ejemplos Prácticos</h3>
+                    <p>Observa los programas aplicados y descarga simulaciones.</p>
+                </a>
+                <a href="nosotros.html" class="nav-card">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Conoce al equipo detrás del proyecto y su desarrollo.</p>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano || Ingeniería en Control y Computación || Universidad Autonoma de Nayarit</p>
+        <p>© 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano || Ingeniería en Control y Computación || Universidad Autónoma de Nayarit</p>
     </footer>
-</body>
-</html>
 
-
+    <script>
+        // Efecto "scroll reveal"
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            const trigger = window.innerHeight * 0.9;
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < trigger) sec.classList.add('visible');
+            });
+        });
+    </script>
 </body>
 </html>
