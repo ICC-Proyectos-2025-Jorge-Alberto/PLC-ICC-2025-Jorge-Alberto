@@ -41,27 +41,6 @@ body {
     color: #d9e9ff;
 }
 
-/* ======= IMAGEN PLC ======= */
-.plc-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    margin: 1rem auto;
-    overflow: hidden;
-    background: #e9f2ff;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-}
-
-.plc-img {
-    max-width: 40%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
 
 @media (hover: hover) {
     .plc-img:hover {
