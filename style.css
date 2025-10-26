@@ -176,6 +176,14 @@ footer {
 .navbar li {
     display: inline-block;
     margin: 0 15px;
+    position: relative; /* para poder usar ::after */
+}
+
+.navbar li:not(:last-child)::after {
+    content: "|";       /* barra vertical */
+    position: absolute;
+    right: -10px;       /* ajusta según el espacio */
+    color: white;       /* color de la barra */
 }
 
 .navbar a {
