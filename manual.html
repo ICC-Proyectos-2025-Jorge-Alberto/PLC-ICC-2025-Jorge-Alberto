@@ -6,10 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual LOGO! Soft Comfort</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ======= ESTILOS ESPECÍFICOS DEL MANUAL ======= */
+        .manual-pdf {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+    .pdf-box {
+        background: #f2f2f2;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .pdf-box p {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-download {
+        background: linear-gradient(90deg, #555, #888);
+        color: white;
+        border: none;
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-download:hover {
+        background: linear-gradient(90deg, #666, #999);
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-download svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+    }
+
+    /* ======= RESPONSIVO ======= */
+    @media (max-width: 600px) {
+        .pdf-box {
+            padding: 1.5rem;
+        }
+
+        .btn-download {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+
+
 </head>
 <body>
 
-```
+
 <!-- 🔹 Barra de navegación -->
 <nav class="navbar">
     <ul>
@@ -32,19 +95,24 @@
     <section class="intro">
         <h2>Manual del Proyecto</h2>
         <p>
-            En esta sección se incluirá el <strong>manual completo</strong> que documenta el desarrollo del proyecto LOGO! Soft Comfort.
-            El documento contendrá la descripción de los bloques, prácticas realizadas, fundamentos teóricos y ejemplos aplicados.
+            En esta sección se encuentra el <strong>manual completo</strong> que documenta el desarrollo del proyecto LOGO! Soft Comfort.
+            Este documento incluye la descripción teórica y práctica de los bloques, fundamentos de programación y ejemplos aplicados en simulaciones.
         </p>
         <p>
-            Una vez finalizado el manual, estará disponible para su descarga directa desde esta página en formato PDF.
+            Puedes descargar el manual en formato PDF para su consulta completa y detallada.
         </p>
     </section>
 
     <section class="manual-pdf">
         <h2>Descarga del Manual</h2>
         <div class="pdf-box">
-            <p>📘 El manual se descargará al presionar el siguiente boton.</p>
-            <button class="btn-disabled">Descargar PDF</button>
+            <p>📘 Manual de Funciones Especiales disponible para descarga:</p>
+            <a href="manual_funciones_especiales.pdf" download class="btn-download">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 16L6 10h4V4h4v6h4l-6 6zM5 18h14v2H5z"/>
+                </svg>
+                Descargar PDF
+            </a>
         </div>
     </section>
 </main>
@@ -63,7 +131,6 @@
         });
     });
 </script>
-```
 
 </body>
 </html>
