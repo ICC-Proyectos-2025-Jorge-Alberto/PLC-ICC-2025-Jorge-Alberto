@@ -12,10 +12,30 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+body.inicio {
+    background: url("img/fondo_inicio.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.bloques {
+    background: url("img/fondo_bloques.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.proyectos {
+    background: url("img/fondo_proyectos.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.manual {
+    background: url("img/fondo_manual.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
 
 /* ======= ENCABEZADO ======= */
 .hero {
-    background: linear-gradient(270deg, #004aad, #0078d7, #00a2ff);
+    background: linear-gradient(270deg, #707070, #383838, #7f7f80);
     background-size: 600% 600%;
     animation: gradientMove 8s ease infinite;
     color: white;
