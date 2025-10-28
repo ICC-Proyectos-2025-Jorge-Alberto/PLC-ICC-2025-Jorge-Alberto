@@ -125,14 +125,72 @@
       font-size: 0.9rem;
       margin-top: auto;
     }
+    .navbar {
+    background: #0d1b2a;
+    color: white;
+    padding: 0.8rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 100%;              /* 🔹 ocupa todo el ancho */
+    margin: 0;                /* 🔹 elimina márgenes externos */
+    left: 0;                  /* 🔹 asegura alineación */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;            /* 🔹 para distribuir horizontalmente */
+    justify-content: center;  /* 🔹 centra los elementos */
+    width: 100%;
+  }
+  
+  .navbar li {
+    margin: 0 20px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #00b4d8;
+  }
+  
+  .navbar a.active {
+    color: #48cae4;
+    border-bottom: 2px solid #48cae4;
+  }
+    .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <ul>
+        
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="funciones_esp.html">Bloques Especiales</a></li>
+        <li><a href="proyectos.html"class="active">Ejemplos Prácticos</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        
+    </ul>
+    </nav>
   <header>
     <a href="index.html" class="back-btn">← Volver al inicio</a>
-    <h1>Proyectos con Funciones Especiales</h1>
+    <h1>Bloques Especiales en PLC</h1>
   </header>
 
+<main class="container">
   <section class="intro">
     <p>
       Los <strong>Proyectos con Funciones Especiales</strong> presentados en los siguientes apartados
@@ -178,7 +236,7 @@
       <a href="proyectos_otros.html" class="btn">Explorar</a>
     </div>
   </section>
-
+</main>
   <footer>
     © 2025 Jorge Daniel Murillo Hernández & Alberto Daniel Ávila Quintano
   </footer>
